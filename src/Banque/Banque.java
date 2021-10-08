@@ -22,7 +22,6 @@ public class Banque {
 
     public int ajoutClient()
     {
-        nbrClients++;
-        return nbrClients;
+        arrClients
     }
 }

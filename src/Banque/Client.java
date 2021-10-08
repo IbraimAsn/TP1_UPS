@@ -10,6 +10,8 @@ public class Client {
     public Client(String nom, Date dateNaissance) {
         this.nom = nom;
         this.dateNaissance = dateNaissance;
+        arrComptes[nbrComptes] = new Compte(0);
+        nbrComptes++;
     }
 
     public void afficherBilan() {
@@ -36,6 +38,7 @@ public class Client {
 
     public int ajouterCompte()
     {
+        arrComptes[nbrComptes] = new Compte(0);
         nbrComptes++;
         return nbrComptes;
     }
