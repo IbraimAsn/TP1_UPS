@@ -5,12 +5,9 @@ public class Banque {
     private int nbrClients;
     private Client arrClients[] = new Client[100];
 
-    public int getNbrClients() {
-        return nbrClients;
-    }
-
-    public Client[] getTblClients() {
-        return arrClients;
+    public Banque()
+    {
+        super();
     }
 
     public void afficherBilan() {
@@ -20,8 +17,18 @@ public class Banque {
         }
     }
 
-    public int ajoutClient()
-    {
-        arrClients
+    public int ajouterClient(Client client) {
+        arrClients[nbrClients] = client;
+        nbrClients++;
+        return nbrClients;
     }
+
+    public int getNbrClients() {
+        return nbrClients;
+    }
+
+    public Client[] getTblClients() {
+        return arrClients;
+    }
+
 }

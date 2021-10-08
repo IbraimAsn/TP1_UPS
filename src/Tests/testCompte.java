@@ -1,4 +1,6 @@
-package Banque;
+package Tests;
+
+import Banque.Compte;
 
 public class testCompte {
     public static void main(String[] args)

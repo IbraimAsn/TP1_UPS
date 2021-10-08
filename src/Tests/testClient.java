@@ -1,6 +1,9 @@
-package Banque;
+package Tests;
 
-import java.util.Scanner;
+import Banque.Client;
+import Banque.Compte;
+import Banque.Date;
+
 import java.util.Random;
 
 public class testClient {
@@ -13,9 +16,12 @@ public class testClient {
         {
             if(moiClient.getCompte(i) == null)
             {
-                moiClient.ajouterCompte();
+                moiClient.ajouterCompte(new Compte((float)rand.nextInt(300)+50));
             }
-            moiClient.getCompte(i).depot((float)rand.nextInt(300)+50);
+            else
+            {
+                moiClient.getCompte(i).depot((float)rand.nextInt(300)+50);
+            }
         }
     }
 
@@ -27,8 +33,7 @@ public class testClient {
 
     public static void ajouteEtInitaliseCompte(Client moiClient)
     {
-        int numeroCompte = moiClient.ajouterCompte();
-        moiClient.getCompte(numeroCompte-1).depot(400);
+        int numeroCompte = moiClient.ajouterCompte(new Compte(400));
     }
 
     public static void main(String[] args) {

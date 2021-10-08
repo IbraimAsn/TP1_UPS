@@ -10,8 +10,7 @@ public class Client {
     public Client(String nom, Date dateNaissance) {
         this.nom = nom;
         this.dateNaissance = dateNaissance;
-        arrComptes[nbrComptes] = new Compte(0);
-        nbrComptes++;
+        nbrComptes = 0;
     }
 
     public void afficherBilan() {
@@ -36,9 +35,9 @@ public class Client {
         System.out.printf("Solde total : %f\n",soldeTotal());
     }
 
-    public int ajouterCompte()
+    public int ajouterCompte(Compte compte)
     {
-        arrComptes[nbrComptes] = new Compte(0);
+        arrComptes[nbrComptes] = compte;
         nbrComptes++;
         return nbrComptes;
     }
