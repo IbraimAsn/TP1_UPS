@@ -37,5 +37,10 @@ public class testBanque {
         Banque maBanque = new Banque();
         ajouterClients(maBanque,arrClients);
         maBanque.afficherBilan();
+        arrClients[0].getCompte(0).virer(100,arrClients[1].getCompte(0));
+        System.out.printf("\n%s : \n",arrClients[0].getNom());
+        arrClients[0].afficherBilan();
+        System.out.printf("\n%s : \n",arrClients[1].getNom());
+        arrClients[1].afficherBilan();
     }
 }
