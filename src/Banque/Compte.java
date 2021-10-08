@@ -16,7 +16,7 @@ public class Compte {
 
     public void retrait(float valeur)
     {
-        solde = solde - valeur;
+        solde -= valeur;
     }
 
     public float getSolde()

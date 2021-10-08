@@ -4,8 +4,41 @@ public class Client {
 
     private String nom;
     private Date dateNaissance;
-    private Compte compte;
+    private int nbrComptes;
+    private Compte arrComptes[] = new Compte[100];
 
+    public Client(String nom, Date dateNaissance) {
+        this.nom = nom;
+        this.dateNaissance = dateNaissance;
+    }
+
+    public void afficherBilan() {
+        for(int i = 0; i < nbrComptes; i++)
+        {
+            System.out.printf("Compte #%d, ",i);
+            arrComptes[i].afficherSolde();
+        }
+    }
+
+    public float soldeTotal()
+    {
+        float soldeTotal = 0;
+        for(int i = 0; i < nbrComptes; i++)
+        {
+            soldeTotal += arrComptes[i].getSolde();
+        }
+        return soldeTotal;
+    }
+
+    public void afficherSolde() {
+        System.out.printf("Solde total : %f\n",soldeTotal());
+    }
+
+    public int ajouterCompte()
+    {
+        nbrComptes++;
+        return nbrComptes;
+    }
 
     public String getNom() {
         return nom;
@@ -15,9 +48,12 @@ public class Client {
         return dateNaissance;
     }
 
-    public Compte getCompte() {
-        return compte;
+    public int getNbrComptes() {
+        return nbrComptes;
     }
 
+    public Compte getCompte(int numero) {
+        return arrComptes[numero];
+    }
 
 }
